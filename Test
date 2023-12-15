@@ -1,0 +1,22 @@
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+
+def country = "Andorra"
+def name = "Asmaa"
+def gender = "Female"
+def productToAdd = "Air Jordan 4 Retro"
+
+Mobile.startApplication('General-Store')
+
+Mobile.setText(findTestObject('Object Repository/YourObjectRepository/AndorraDropdown'), country)
+
+Mobile.setText(findTestObject('Object Repository/YourObjectRepository/NameTextField'), name)
+
+Mobile.tap(findTestObject('Object Repository/YourObjectRepository/GenderRadioButton', [('text') : gender]))
+
+Mobile.tap(findTestObject('Object Repository/YourObjectRepository/LetsShopButton'))
+
+Mobile.tap(findTestObject('Object Repository/YourObjectRepository/AirJordan4Retro'))
+
+Mobile.tap(findTestObject('Object Repository/YourObjectRepository/CartButton'))
+
+Mobile.verifyElementVisible(findTestObject('Object Repository/YourObjectRepository/CartProduct'))
